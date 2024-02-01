@@ -25,14 +25,19 @@ yay -S fcitx5-pinyin-zhwiki --noconfirm # 安装词库
 echo -e "\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx" | sudo tee -a /etc/environment
 
 # 安装常用工具
-echo -e "\033[31m 即将安装常用工具 neofetch neovim man code v2raya google-chrome git ssh vim linuxqq wechat-uos \033[0m"
+echo -e "\033[31m 即将安装常用工具 neofetch neovim man code v2raya google-chrome git ssh vim  \033[0m"
 sleep 3s
 sudo pacman -S neofetch neovim man code v2raya google-chrome git ssh vim linuxqq wechat-uos --noconfirm
 
 # 配置git
+echo -e "\033[31m 环境基本搭建完毕，现在配置github可ctrl+c终止 \033[0m"
+echo -e "\033[31m 你的GitHub的username \033[0m"
+read name 
+echo -e "\033[31m 你的GitHub的email \033[0m"
+read email 
 ssh-keygen 
-git config --global user.name "zhixi221"
-git config --global user.email "zhixi221@gmail.com"
+git config --global user.name $name
+git config --global user.email $email
 echo -e "\033[31m 安装完成 \033[0m"
 sleep 3s 
 
